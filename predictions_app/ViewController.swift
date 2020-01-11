@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Foundation
+
 
 class ViewController: UIViewController {
-    
     var arrayWords = [String]()
 
+
     @IBOutlet weak var labelWords: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         readFromFile()
-        randomizeBackgroundColor()
+        randomizePredictions()
        
     }
 
@@ -28,18 +33,26 @@ class ViewController: UIViewController {
         }
     }
     
-    
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        UIView.animate(withDuration: 0.4) {
-            self.randomizeBackgroundColor()
+        UIView.animate(withDuration: 0.8) {
+            self.randomizePredictions()
         }
     }
     
-    
-    func randomizeBackgroundColor() {
-        let randomSymbol = Int.random(in: 0...arrayWords.count - 1)
+    func  randomizePredictions() {
+        let randomSymbol = Int.random(in: 0...arrayWords.count - 2)
         labelWords.text = arrayWords[randomSymbol]
+    }
+    
+    func gradientAlpha() {
+        UIView.animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+            self.
+        })
     }
 
 }
+
+
+
+
 
